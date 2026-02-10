@@ -1,3 +1,14 @@
 complaint_id,complaint_type,agency,description,created_at,closed_at,city,state
 2001,Noise,Police,Residential noise complaint,2024-01-01,2024-01-02,New York,NY
 2002,Street Condition,DOT,Pothole reported,2024-01-03,2024-01-05,New York,NY
+unique_key,created_date,closed_date,agency,complaint_type,descriptor,city
+3110001,2024-01-01,2024-01-02,DOT,Street Condition,Pothole on roadway,New York
+3110002,2024-01-01,2024-01-03,NYPD,Noise,Loud music after midnight,New York
+3110003,2024-01-02,2024-01-06,DOT,Street Condition,Cracked sidewalk,New York
+3110004,2024-01-02,2024-01-02,DSNY,Sanitation,Overflowing public trash bin,New York
+3110005,2024-01-03,2024-01-05,NYPD,Noise,Construction noise complaint,New York
+3110006,2024-01-03,2024-01-07,DOT,Street Condition,Sunken manhole cover,New York
+3110007,2024-01-04,2024-01-04,DSNY,Sanitation,Missed garbage collection,New York
+3110008,2024-01-04,2024-01-08,DOT,Street Condition,Pothole causing traffic slowdown,New York
+3110009,2024-01-05,2024-01-06,NYPD,Noise,Car alarm sounding continuously,New York
+3110010,2024-01-05,2024-01-10,DOT,Street Condition,Large road surface collapse,New York
