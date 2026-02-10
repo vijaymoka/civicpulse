@@ -10,6 +10,8 @@ This repository includes a lightweight Streamlit application located in the `/ap
 The app demonstrates a live execution of the CivicPulse agent workflow, showing how public
 complaint data is analyzed, prioritized, and explained using Elastic Agent Builder and
 Elasticsearch-backed reasoning.
+A recorded demo walkthrough is provided via the Devpost submission.
+
 
 
 ## Solution
