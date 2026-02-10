@@ -29,8 +29,17 @@ This project demonstrates how Elastic Agent Builder can orchestrate complex anal
 ## Data
 Uses publicly available U.S. open data (311-style datasets) and synthetic samples. No personal data enrichment.
 
-## Demo
-See demo video and scripts in the `/demo` folder.
+## Demo Video
+The demo video for CivicPulse is available via the Devpost submission.
+
+The video demonstrates:
+- Uploading a synthetic public complaint dataset
+- Running the multi-step CivicPulse agent
+- Elasticsearch-backed analysis and prioritization
+- Explainable, deterministic agent output
+
+Please refer to the Devpost project page to view the demo video.
+
 
 ## Ingestion
 Public complaint datasets are ingested into Elasticsearch using a deterministic pipeline with explicit source detection and field normalization. The AI agent operates exclusively on indexed data.
