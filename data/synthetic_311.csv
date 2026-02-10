@@ -1,0 +1,3 @@
+complaint_id,complaint_type,agency,description,created_at,closed_at,city,state
+2001,Noise,Police,Residential noise complaint,2024-01-01,2024-01-02,New York,NY
+2002,Street Condition,DOT,Pothole reported,2024-01-03,2024-01-05,New York,NY

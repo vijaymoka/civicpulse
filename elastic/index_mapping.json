@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "properties": {
+      "complaint_id": { "type": "keyword" },
+      "complaint_type": { "type": "keyword" },
+      "agency": { "type": "keyword" },
+      "description": { "type": "text" },
+      "created_at": { "type": "date" },
+      "closed_at": { "type": "date" },
+      "resolution_time_hours": { "type": "float" },
+      "city": { "type": "keyword" },
+      "state": { "type": "keyword" }
+    }
+  }
+}

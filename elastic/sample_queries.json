@@ -1,0 +1,5 @@
+{
+  "trend_analysis": "date_histogram on created_at grouped by complaint_type",
+  "sla_prediction": "percentiles on resolution_time_hours",
+  "correlation": "terms aggregation on agency and city"
+}

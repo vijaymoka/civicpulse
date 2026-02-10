@@ -1,0 +1,22 @@
+[
+  {
+    "name": "analyze_complaint_trends",
+    "description": "Detect abnormal complaint volume trends using Elasticsearch aggregations"
+  },
+  {
+    "name": "predict_sla_breach_risk",
+    "description": "Estimate SLA breach probability using historical resolution times"
+  },
+  {
+    "name": "root_cause_correlation",
+    "description": "Correlate complaints by agency, location, and category"
+  },
+  {
+    "name": "fairness_and_bias_check",
+    "description": "Compare resolution times across geographic regions"
+  },
+  {
+    "name": "generate_priority_queue",
+    "description": "Rank complaint categories based on impact and risk"
+  }
+]

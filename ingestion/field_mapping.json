@@ -1,0 +1,10 @@
+{
+  "complaint_id": ["complaint_id", "unique_key", "Complaint ID"],
+  "complaint_type": ["complaint_type", "Product"],
+  "agency": ["agency", "Company"],
+  "description": ["description", "Consumer complaint narrative"],
+  "created_at": ["created_date", "Date received"],
+  "closed_at": ["closed_date", "Date closed"],
+  "city": ["city"],
+  "state": ["state"]
+}
