@@ -1,52 +1,11 @@
-# CivicPulse
+# 🏛️ CivicPulse: Multi-Agent Civic Intelligence System> AI-powered governance analytics platform built with Elastic Agent Builder for the Elasticsearch Agent Builder Hackathon 2026![License](https://img.shields.io/badge/license-MIT-blue.svg)![Elastic](https://img.shields.io/badge/Elastic-Agent%20Builder-005571)![ES|QL](https://img.shields.io/badge/ES%7CQL-Powered-00bfb3)![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)---## 🎯 ProblemUrban governance teams struggle with fragmented complaint data, reactive decision-making, and no predictive capability. Mayors and administrators lack real-time visibility into district-level stress, SLA compliance, and escalation patterns. Citizens have no intelligent interface to track complaints or find nearby issues.## 💡 SolutionCivicPulse is a unified AI assistant built on Elastic Agent Builder that transforms raw complaint data into actionable insights, predictive projections, and intervention simulations through natural language conversation.**One conversation. Infinite intelligence.**---## 🏗️ Architecture        USER (Citizen / Mayor)                 │                 ▼   ┌──────────────────────────┐   │  CivicPulse Super Agent  │   │  - Intent Classification │   │  - Stress Computation    │   │  - ES|QL Execution       │   │  - Risk Classification   │   │  - Intervention Sim      │   │  - 7-Day Projection      │   └────────────┬─────────────┘                │    ┌───────────┴───────────┐    ▼                       ▼┌──────────────┐ ┌─────────────────┐│ Citizen │ │ Mayor Command ││ Dashboard │ │ Center ││ - Map View │ │ - Stress Monitor││ - Complaints │ │ - Risk Panels ││ - Filters │ │ - Trends │└──────┬───────┘ └────────┬────────┘└────────┬───────────┘▼┌────────────────────────┐│ Elasticsearch ││ civicpulse_complaints ││ 5,000+ geo-tagged docs │└────────────────────────┘---## ✨ Features### 🤖 AI Agent Capabilities- **Stress Score Calculation** — Custom formula with transparent multi-step reasoning- **Risk Classification** — Stable / Warning / High Risk bands- **7-Day Projection** — Velocity-based trend forecasting- **District Comparison** — Ranked analysis across all districts- **Root Cause Analysis** — Category-level breach breakdown- **Intervention Simulation** — What-if scenarios with before/after impact- **Complaint Lookup** — Individual complaint retrieval by ID- **Geo Search** — Find nearby complaints by coordinates### 📊 Dashboard Features- **Mayor Command Center** — Strategic overview with stress metrics, trends, and category breakdowns- **Citizen Dashboard** — Operational map view with complaint locations and status filters### 🔧 Data Pipeline- **Bulk Ingestion** — 5,000 records with controlled GHC score (65-70)- **Live Streaming** — Real-time data with crisis mode simulation- **Rolling Retention** — Automatic cleanup maintaining 5,000 record cap- **Geo-point Support** — Proper geo_point mapping for map visualizations---## 🧮 Stress ModelStress = (SLA_breach_rate × 50) + (Escalation_rate × 30)Where:SLA_breach_rate = breached_complaints / total_complaintsEscalation_rate = escalated_complaints / total_complaintsRisk Classification:< 35 → Stable ✅35-50 → Warning ⚠️≥ 50 → High Risk 🔴7-Day Projection:Velocity = (recent_7d - previous_7d) / previous_7dProjected_Stress = Current_Stress + (Velocity × 0.5)---## 📁 Project Structurecivicpulse-intelligence/├── README.md # Project documentation├── LICENSE # MIT License├── data/│ ├── elastic_ingest.py # Bulk data ingestion (5000 records)│ └── elastic_stream.py # Live streaming engine with crisis mode└── agent/└── system_instruction.md # Super Agent system instruction---## 🚀 Setup Guide### Prerequisites- Python 3.10+- Elasticsearch cluster (Elastic Cloud)- Kibana access- `elasticsearch` Python package### Step 1: Install Dependencies```bashpip install elasticsearchStep 2: Ingest Datapython data/elastic_ingest.pyThis creates the civicpulse_complaints index with proper geo_point mapping and ingests 5,000 records.Step 3: Start Live Streaming (Optional)python data/elastic_stream.pyControls:Press c — Activate crisis mode (GHC drops to 40-50)Press n — Normalize (GHC returns to 65-70)Press q — QuitStep 4: Create AgentOpen Elastic Agent Builder in KibanaCreate new agent: CivicPulse IntelligenceEnable tools:platform.core.execute_esqlplatform.core.searchplatform.core.get_document_by_idplatform.core.get_index_mappingPaste system instruction from agent/system_instruction.mdSave agentStep 5: Create DashboardsCreate Mayor Command Center dashboard in KibanaCreate Citizen Dashboard with map visualizationConfigure data view for civicpulse_complaints index🔧 Tools UsedToolPurposeElastic Agent BuilderAI agent with system instructions and tool integrationES|QLStructured queries for aggregations and analysisElasticsearchData storage, search, and aggregationsKibana DashboardsStrategic and operational visualizationsPythonData ingestion and streaming pipeline🎥 Demo[Watch Demo Video →](YOUR_YOUTUBE_LINK)📊 Index SchemaFieldTypeDescriptioncomplaint_idkeywordUnique identifierdistricttext + keywordNorth / South / East / Westcategorytext + keywordComplaint categorystatustext + keywordOpen / Closedprioritytext + keywordLow / Medium / Highsla_breachedbooleanSLA compliance flagescalatedbooleanEscalation flagcreated_atdateCreation timestampresolved_atdateResolution timestampdays_openlongDays since creationresolution_time_dayslongTime to resolvesla_dayslongSLA target daysgeo_locationgeo_pointLat/lon coordinates👤 AuthorBuilt for the Elasticsearch Agent Builder Hackathon 2026📄 LicenseThis project is licensed under the MIT License - see the LICENSE file for details.
 
-CivicPulse is a deterministic, multi-step AI agent built with Elastic Agent Builder that analyzes public complaint data to prioritize issues, predict service delays, and generate explainable operational insights.
+## 📊 Dashboards (NDJSON Export)
 
-## Problem
-Public agencies receive millions of complaints across systems like 311 service requests and federal consumer complaint portals. Existing tools rely on static dashboards and manual review, making it difficult to detect emerging issues, predict SLA breaches, and prioritize limited resources.
+This file contains:
+- Mayor Command Center Dashboard
+- Citizen Service Agent Dashboard
+- Associated visualizations and saved objects
 
-## Demo Application
-This repository includes a lightweight Streamlit application located in the `/app` directory.
-The app demonstrates a live execution of the CivicPulse agent workflow, showing how public
-complaint data is analyzed, prioritized, and explained using Elastic Agent Builder and
-Elasticsearch-backed reasoning.
-A recorded demo walkthrough is provided via the Devpost submission.
-
-
-
-## Solution
-CivicPulse treats Elasticsearch as the primary reasoning engine and uses LLMs only for orchestration and explanation. The agent ingests publicly available U.S. complaint data, normalizes it into a canonical schema, and performs deterministic analytics to generate traceable, reproducible decisions.
-
-## Key Features
-- Multi-step agent using Elastic Agent Builder
-- Deterministic trend and anomaly detection
-- SLA breach risk prediction
-- Geospatial and fairness analysis
-- Explainable priority queues
-- Optional LLM-assisted explanation mode
-
-## Why Elastic
-This project demonstrates how Elastic Agent Builder can orchestrate complex analytical workflows where Elasticsearch performs scalable, explainable reasoning over large datasets.
-
-## Data
-Uses publicly available U.S. open data (311-style datasets) and synthetic samples. No personal data enrichment.
-
-## Demo
-See demo script in the `/demo` folder.
-
-## Ingestion
-Public complaint datasets are ingested into Elasticsearch using a deterministic pipeline with explicit source detection and field normalization. The AI agent operates exclusively on indexed data.
-
-## Running the Demo
-To run the demo application locally:
-
-```bash
-python -m streamlit run app/app.py
-
-
-## Notes
-The demo application is designed to illustrate agent orchestration and explainability.
-All rankings are derived from deterministic Elasticsearch logic; the AI agent only
-coordinates steps and explains results.
-
-
+Import via:
+Kibana → Stack Management → Saved Objects → Import
